@@ -19,6 +19,7 @@ class FeedEntry:
     source_text: str
     category_slug: str | None
     category_name: str
+    author_name: str
 
 
 @dataclass(slots=True)
@@ -49,6 +50,7 @@ class FeedClient:
             link = item.get("link", "").strip()
             summary = item.get("summary") or item.get("description") or ""
             plain_summary = truncate_text(strip_html(summary), 280)
+            author_name = strip_html(item.get("author") or item.get("dc_creator") or item.get("creator") or "") or "未知作者"
             published_raw = (
                 item.get("published")
                 or item.get("updated")
@@ -88,6 +90,7 @@ class FeedClient:
                     source_text=source_text,
                     category_slug=category_slug,
                     category_name=category_label(category_slug),
+                     author_name=author_name,
                 )
             )
 

@@ -129,6 +129,7 @@ class FeedPoller:
                 link=entry.link,
                 matched_keywords=matched_keywords,
                 category_name=entry.category_name,
+                author_name=entry.author_name,
             )
 
             delivered = False
