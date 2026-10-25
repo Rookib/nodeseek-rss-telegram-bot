@@ -17,7 +17,7 @@ sudo systemctl enable --now docker
 ## 下载与配置
 
 ```bash
-git clone https://github.com/suckdrygod/nodeseek-rss-telegram-bot.git
+git clone https://github.com/Rookib/nodeseek-rss-telegram-bot.git
 cd nodeseek-rss-telegram-bot
 cp .env.example .env
 ```
